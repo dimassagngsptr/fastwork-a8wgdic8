@@ -10,7 +10,7 @@ import shipping from "../../assets/shipping.png";
 import payments from "../../assets/payments.png";
 import banks from "../../assets/banks.png";
 import digicert from "../../assets/digicert.png";
-import mainBg from "../../assets/mainbg.png";
+import mainBg from "../../assets/bgp.png";
 import instagram from "../../assets/instagram.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";

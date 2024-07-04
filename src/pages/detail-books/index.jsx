@@ -9,6 +9,7 @@ import BookShipping from "../../components/module/detail/book-shipping";
 import BookSlider from "../../components/module/detail/book-information/Slider";
 import Container from "../../components/module/container";
 import FooterDetail from "../../components/module/detail/footer-detail";
+import Layout from "../layout";
 
 const book = {
   image: images?.dummyBook,
@@ -151,79 +152,81 @@ export default function DetailBooks() {
     },
   ];
   return (
-    <div
-      style={{
-        backgroundImage: `url(${images?.mainBg})`,
-      }}
-    >
-      <Navbar />
-      <div>
-        <div className="min-h-screen py-5 px-2 font-poppins">
-          <BookInformation
-            point={point}
-            product={product}
-            buyQuantity={buyQuantity}
-            setBuyQuantity={setBuyQuantity}
-          />
-          <div className="block md:hidden">
-            <BookShipping
+    <Layout>
+      <div
+        style={{
+          backgroundImage: `url(${images?.mainBg})`,
+        }}
+      >
+        <Navbar />
+        <div>
+          <div className="min-h-screen py-5 px-2 font-poppins">
+            <BookInformation
+              point={point}
+              product={product}
               buyQuantity={buyQuantity}
               setBuyQuantity={setBuyQuantity}
             />
-          </div>
-          <div className="bg-white my-2 min-h-48 px-5 xl:hidden">
-            <BookSlider icons={icons} />
-          </div>
-          <div className="hidden xl:block xl:my-1">
-            <BookSlider icons={icons} />
-          </div>
-          {categoryBooks?.map((item, i) => (
-            <div
-              key={i}
-              className="mb-3 py-4 xl:py-8 bg-white xl:max-w-[70%] xl:mx-auto"
-            >
-              <Container
-                className={
-                  "mx-5 xl:text-lg xl:w-1/3 xl:ml-2 text-orange-400 text-start"
-                }
-                title={item?.title}
-                books={item?.listBooks}
+            <div className="block md:hidden">
+              <BookShipping
+                buyQuantity={buyQuantity}
+                setBuyQuantity={setBuyQuantity}
               />
             </div>
-          ))}
-          <FooterDetail title={" Description"}>
-            {descParagraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className="mb-2 text-justify text-sm text-gray-700 px-5"
+            <div className="bg-white my-2 min-h-48 px-5 xl:hidden">
+              <BookSlider icons={icons} />
+            </div>
+            <div className="hidden xl:block xl:my-1">
+              <BookSlider icons={icons} />
+            </div>
+            {categoryBooks?.map((item, i) => (
+              <div
+                key={i}
+                className="mb-3 py-4 xl:py-8 bg-white xl:max-w-[70%] xl:mx-auto"
               >
-                {paragraph}
-              </p>
+                <Container
+                  className={
+                    "mx-5 xl:text-lg xl:w-1/3 xl:ml-2 text-orange-400 text-start"
+                  }
+                  title={item?.title}
+                  books={item?.listBooks}
+                />
+              </div>
             ))}
-          </FooterDetail>
-          <FooterDetail title={"Customer Reviews"}>
-            <div className="flex px-5 items-center">
-              <Stars ratings={book?.ratings} />
-              <p className="text-sm">({book?.ratings} customer reviews)</p>
-            </div>
-            <p className="px-5 text-sm font-bold">
-              There are no reviews for this product.
-            </p>
-            <div className="px-5 text-sm mt-4">
-              <p>Share your thoughts with other customers:</p>
-              <Button
-                className={
-                  "bg-black/80 text-white mt-1 hover:bg-orange-400 transition-colors duration-300"
-                }
-                onClick={() => alert("navigasi ke review")}
-              >
-                WRITE A CUSTOMER REVIEW
-              </Button>
-            </div>
-          </FooterDetail>
+            <FooterDetail title={" Description"}>
+              {descParagraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="mb-2 text-justify text-sm text-gray-700 px-5"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </FooterDetail>
+            <FooterDetail title={"Customer Reviews"}>
+              <div className="flex px-5 items-center">
+                <Stars ratings={book?.ratings} />
+                <p className="text-sm">({book?.ratings} customer reviews)</p>
+              </div>
+              <p className="px-5 text-sm font-bold">
+                There are no reviews for this product.
+              </p>
+              <div className="px-5 text-sm mt-4">
+                <p>Share your thoughts with other customers:</p>
+                <Button
+                  className={
+                    "bg-black/80 text-white mt-1 hover:bg-orange-400 transition-colors duration-300"
+                  }
+                  onClick={() => alert("navigasi ke review")}
+                >
+                  WRITE A CUSTOMER REVIEW
+                </Button>
+              </div>
+            </FooterDetail>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </Layout>
   );
 }

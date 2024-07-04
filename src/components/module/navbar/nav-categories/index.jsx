@@ -96,7 +96,7 @@ const NavCategories = () => {
     },
   ];
   return (
-    <div className="hidden xl:relative xl:flex bg-gray-200 h-8 px-[18%] gap-x-5 font-poppins">
+    <div className="hidden xl:relative xl:flex bg-gray-100 h-8 px-[18%] gap-x-5 font-poppins shadow-md">
       {items?.map((item, i) => (
         <div
           onMouseEnter={() => handleOpen(item?.title)}

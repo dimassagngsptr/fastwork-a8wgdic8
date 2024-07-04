@@ -93,7 +93,7 @@ export default function Home() {
         className="flex flex-col gap-16 bg-gray-200"
         style={{
           backgroundImage: `url(${images?.mainBg})`,
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
         }}
       >
         <div className="xl:max-w-[70%] xl:mx-auto">
