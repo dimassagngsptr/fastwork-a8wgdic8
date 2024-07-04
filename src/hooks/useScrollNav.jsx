@@ -7,9 +7,9 @@ export const useScrollNav = () => {
   const controlNavbar = () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY <= 50 || currentScrollY >= 600) {
+    if (currentScrollY <= 150 || currentScrollY >= 600) {
       setShow(true);
-    } else if (currentScrollY > 50 && currentScrollY < 600) {
+    } else if (currentScrollY > 150 && currentScrollY < 600) {
       if (currentScrollY < lastScrollY) {
         setShow(true); 
       } else {

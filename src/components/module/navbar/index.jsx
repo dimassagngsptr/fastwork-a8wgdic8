@@ -1,33 +1,37 @@
-import { useEffect, useState } from "react";
-import SelectOption from "../../base/Select";
-import Button from "../../base/Button";
-import Input from "../../base/Input";
+import { useState } from "react";
 import { useScrollNav } from "../../../hooks/useScrollNav";
 import Jumbotron from "../jumbotron";
 import NavLogo from "./nav-logo";
 import NavMobile from "./nav-mobile";
 import NavSearch from "./nav-search";
 import NavAuth from "./nav-auth";
+import NavCategories from "./nav-categories";
 
-const Navbar = () => {
+const Navbar = ({ jumbotron }) => {
   const show = useScrollNav();
   const [open, setOpen] = useState(false);
   return (
     <nav>
       <div
-        className={`sticky xl:fixed top-0 w-full transition-transform duration-700 transform ${
+        className={`sticky md:fixed xl:fixed top-0 w-full transition-transform duration-700 transform ${
           show ? "translate-y-0" : "-translate-y-full"
-        } font-poppins z-10`}
+        } font-poppins !z-50`}
       >
         <div className="bg-main-red shadow-md xl:h-20 min-h-full xl:px-[15%] md:px-10 px-5 py-3 flex flex-col xl:flex-row justify-around xl:items-center gap-x-0 gap-y-2 xl:gap-x-2">
           <NavLogo open={open} setOpen={setOpen} />
+          {/* list yang ada di hamburger menu */}
           <NavMobile open={open} />
+          {/* list yang ada di hamburger menu */}
           <NavSearch />
           <NavAuth />
         </div>
+        <NavCategories />
       </div>
-      <div className="hidden xl:block mx-auto xl:px-4 xl:py-2 bg-gray-200 xl:h-10"></div>
-      <Jumbotron />
+      {jumbotron && (
+        <div className="md:mt-36 xl:mt-28">
+          <Jumbotron />
+        </div>
+      )}
     </nav>
   );
 };

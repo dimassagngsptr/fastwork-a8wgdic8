@@ -1,6 +1,7 @@
 import { useState } from "react";
 import images from "../../../image/imageGalery";
 
+
 const NavMobile = ({ open }) => {
   const [menu, setMenu] = useState("");
   const handleMenu = (title) => {
@@ -10,36 +11,130 @@ const NavMobile = ({ open }) => {
     }
     setMenu(title);
   };
+  //disesuaikan dengan root navigasi
   const NAVMENU = [
     {
       title: "Categories",
       subTitle: [
-        "Books",
-        "Books On Indonesia",
-        "Academic Books",
-        "Magazine",
-        "Stationery",
-        "Travel Accessories",
-        "Toys",
-        "Greeting Card",
-        "Gift Voucher",
+        {
+          link: "/",
+          sub: "Books",
+        },
+        {
+          link: "/",
+          sub: "Books On Indonesia",
+        },
+        {
+          link: "/",
+          sub: "Academic Books",
+        },
+        {
+          link: "/",
+          sub: "Magazine",
+        },
+        {
+          link: "/",
+          sub: "Stationery",
+        },
+        {
+          link: "/",
+          sub: "Travel Accessories",
+        },
+        {
+          link: "/",
+          sub: "Toys",
+        },
+        {
+          link: "/",
+          sub: "Greeting Card",
+        },
+        {
+          link: "/",
+          sub: "Gift Voucher",
+        },
       ],
     },
     {
-      title: "New Realese",
+      title: "New Release",
     },
     {
       title: "Pre Orders",
       subTitle: [
-        "Books",
-        "Books On Indonesia",
-        "Academic Books",
-        "Magazine",
-        "Stationery",
-        "Travel Accessories",
-        "Toys",
-        "Greeting Card",
-        "Gift Voucher",
+        {
+          link: "/",
+          sub: "Down Payment",
+        },
+        {
+          link: "/",
+          sub: "Full Price",
+        },
+      ],
+    },
+    {
+      title: "Bargain Books",
+      subTitle: [
+        {
+          link: "/",
+          sub: "Under Rp.50.000",
+        },
+        {
+          link: "/",
+          sub: "Rp. 50.000 - Rp.100.000",
+        },
+        {
+          link: "/",
+          sub: "Above Rp.100.000",
+        },
+      ],
+    },
+    {
+      title: "Wishlist",
+    },
+    {
+      title: "Store Location",
+    },
+    {
+      title: "PEC Barcode",
+    },
+    {
+      title: "My Account",
+      subTitle: [
+        {
+          link: "/",
+          sub: "Login",
+        },
+        {
+          link: "/",
+          sub: "Register",
+        },
+        {
+          link: "/",
+          sub: "Forgotten Password",
+        },
+        {
+          link: "/",
+          sub: "View Orders History",
+        },
+        {
+          link: "/",
+          sub: "Purchase Products Review",
+        },
+        {
+          link: "/",
+          sub: "Finalized Preorder Payments",
+        },
+        {
+          link: "/",
+          sub: "Payment Confirmation",
+        },
+        {
+          link: "/",
+          sub: "Write Testimonials",
+        },
+        {
+          link: "/",
+          sub: "PEC Member Details",
+        },
       ],
     },
   ];
@@ -70,15 +165,18 @@ const NavMobile = ({ open }) => {
           </div>
           <div
             className={`overflow-hidden transition-max-height duration-300 ease-in-out ${
-              menu === item?.title ? "max-h-40" : "max-h-0"
+              menu === item?.title ? "max-h-72" : "max-h-0"
             } ml-4`}
           >
             {item?.subTitle?.map((subItem, j) => (
               <div
+                onClick={() =>
+                  alert(`navigasi ke : path ${subItem?.link} ${subItem?.sub}`)
+                }
                 key={j}
                 className="text-gray-800 text-xs py-0.5 hover:text-yellow-500 transition-colors duration-300"
               >
-                {subItem}
+                {subItem?.sub}
               </div>
             ))}
           </div>

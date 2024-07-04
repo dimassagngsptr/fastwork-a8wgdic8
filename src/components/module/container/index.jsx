@@ -7,83 +7,32 @@ import { formatIDR } from "../../../utils/formatIDR";
 import Button from "../../base/Button";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import PrevArrow from "../../base/prevArrow";
+import NextArrow from "../../base/nextArrow";
+import { useNavigate } from "react-router-dom";
+import { useSlideShow } from "../../../hooks/useSlideShow";
 
-const Container = ({ title, className }) => {
+const Container = ({ title, className, books, line }) => {
+  const navigate = useNavigate();
+
   const [buyNow, setBuyNow] = useState(null);
-  const [slideShow, setSlideShow] = useState(6);
-
-  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1023px)",
-  });
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-
-  useEffect(() => {
-    if (isDesktop) {
-      setSlideShow(6);
-    } else if (isTablet) {
-      setSlideShow(4);
-    } else if (isMobile) {
-      setSlideShow(2);
-    }
-  }, [isDesktop, isTablet, isMobile]);
+  const show = useSlideShow();
   const handleHoverBuyNow = (id) => {
     setBuyNow(id);
   };
-  const books = [
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.03,
-    },
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.4,
-    },
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.12,
-    },
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.05,
-    },
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.05,
-    },
-    {
-      image: images?.dummyBook,
-      title: "Elemental Oracle",
-      author: "Mathews, Jhon",
-      price: 200000,
-      discount: 0.05,
-    },
-  ];
+
   const settings = {
     infinite: true,
     autoplay: true,
     speed: 500,
     autoplaySpeed: 2000,
-    slidesToShow: slideShow,
+    slidesToShow: show,
     slidesToScroll: 1,
     centerMode: true,
     cssEase: "linear",
     centerPadding: "0px",
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
   return (
     <main className="font-poppins">
@@ -95,7 +44,9 @@ const Container = ({ title, className }) => {
       >
         {title}
       </div>
-      <div className="h-0.5 w-[50px] xl:w-20 bg-main-red mx-auto my-4"></div>
+      {line && (
+        <div className="h-0.5 w-[50px] xl:w-20 bg-main-red mx-auto my-4"></div>
+      )}
       <div className="max-w-screen overflow-hidden relative">
         <Slider {...settings}>
           {/* disesuaikan dengan data dari backend */}
@@ -105,6 +56,9 @@ const Container = ({ title, className }) => {
               className="flex flex-col py-3 px-5 cursor-pointer"
               onMouseEnter={() => handleHoverBuyNow(idx)}
               onMouseLeave={() => setBuyNow(null)}
+              // rubah dengan id jika menggunakan id untuk mendapatkan detail product, rubah juga di app.jsx
+              // path menjadi /detail/:id
+              onClick={() => navigate(`/detail/${item?.title}`)}
             >
               <img
                 key={idx}

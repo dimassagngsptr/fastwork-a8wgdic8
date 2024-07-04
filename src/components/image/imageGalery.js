@@ -11,6 +11,27 @@ import payments from "../../assets/payments.png";
 import banks from "../../assets/banks.png";
 import digicert from "../../assets/digicert.png";
 import mainBg from "../../assets/mainbg.png";
+import instagram from "../../assets/instagram.png";
+import facebook from "../../assets/facebook.png";
+import twitter from "../../assets/twitter.png";
+import googlePlay from "../../assets/google-play.png";
+import appStore from "../../assets/app-store.png";
+import whatsapp from "../../assets/whatsapp.png";
+import airplane from "../../assets/freeshippingplane.png";
+import building from "../../assets/building.png";
+import dimensions from "../../assets/dimensions.png";
+import grade from "../../assets/grade.png";
+import isbnBarcode from "../../assets/isbn-barcode.png";
+import language from "../../assets/language.png";
+import printLength from "../../assets/print-length.png";
+import publishDate from "../../assets/publish-date.png";
+import fbicon from "../../assets/fbicon.png";
+import twittericon from "../../assets/twittericon.png";
+import email from "../../assets/email.png";
+import whatsappicon from "../../assets/whatsappIcon.png";
+import weight from "../../assets/weight.png";
+import ageGroups from "../../assets/age-group.png";
+
 const images = {
   logo,
   arrownav,
@@ -25,6 +46,26 @@ const images = {
   banks,
   digicert,
   mainBg,
+  instagram,
+  facebook,
+  twitter,
+  googlePlay,
+  appStore,
+  whatsapp,
+  airplane,
+  building,
+  dimensions,
+  grade,
+  isbnBarcode,
+  language,
+  publishDate,
+  printLength,
+  fbicon,
+  twittericon,
+  email,
+  whatsappicon,
+  weight,
+  ageGroups,
 };
 
 export default images;

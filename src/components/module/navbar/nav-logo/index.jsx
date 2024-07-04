@@ -7,6 +7,7 @@ const NavLogo = ({ open, setOpen }) => {
         </a>
         <small>Indonesia's largest bookstore</small>
       </div>
+      {/* ---navbar untuk versi mobile dan tablet--- */}
       <div className="flex gap-x-3 xl:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +50,7 @@ const NavLogo = ({ open, setOpen }) => {
             clipRule="evenodd"
           />
         </svg>
+        {/* icon hamburger menu */}
         <svg
           onClick={() => setOpen(!open)}
           xmlns="http://www.w3.org/2000/svg"
