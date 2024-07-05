@@ -33,18 +33,15 @@ const NavSearch = () => {
   };
   return (
     <div className="flex items-center w-full">
-      <SelectOption
-        onChange={(e) => handleCategories(e)}
-        className={
-          "hidden text-gray-500 xl:block xl:px-2 xl:py-[8px] rounded-l cursor-pointer xl:mt-[1px] px-0 py-0 outline-none"
-        }
-      >
-        {options?.map((item, i) => (
-          <option key={i} value={item?.value} className="font-poppins">
-            {item?.title}
-          </option>
-        ))}
-      </SelectOption>
+      <div className="hidden text-gray-500 xl:block xl:px-2 py-[4px] rounded-l cursor-pointer xl:mt-[1px] bg-white outline-none">
+        <SelectOption onChange={(e) => handleCategories(e)} className={"px-1 py-1 bg-transparent cursor-pointer"}>
+          {options?.map((item, i) => (
+            <option key={i} value={item?.value} className="font-poppins">
+              {item?.title}
+            </option>
+          ))}
+        </SelectOption>
+      </div>
       <Input
         className={
           "xl:px-5 xl:py-[7px] xl:mt-[1px] outline-none rounded-l xl:-ml-1 xl:w-96 w-72 px-2 py-2 md:w-[700px]"
@@ -56,7 +53,9 @@ const NavSearch = () => {
       />
       <Button
         onClick={() => alert(`Seach for ${query}`)}
-        className={"xl:-ml-3 xl:mt-[1px] xl:py-[6px] xl:px-4 py-[6.5px] mt-[1px] px-4"}
+        className={
+          "xl:-ml-3 xl:mt-[1px] xl:py-[6px] xl:px-4 py-[6.5px] mt-[1px] px-4"
+        }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
