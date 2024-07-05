@@ -35,10 +35,12 @@ const NavSearch = () => {
     <div className="flex items-center w-full">
       <SelectOption
         onChange={(e) => handleCategories(e)}
-        className={"hidden xl:block xl:px-2 xl:py-2 px-0 py-0 outline-none"}
+        className={
+          "hidden text-gray-500 xl:block xl:px-2 xl:py-[9px] rounded-l cursor-pointer xl:mt-[1px] px-0 py-0 outline-none"
+        }
       >
         {options?.map((item, i) => (
-          <option key={i} value={item?.value}>
+          <option key={i} value={item?.value} className="font-poppins">
             {item?.title}
           </option>
         ))}
@@ -52,7 +54,10 @@ const NavSearch = () => {
         type="text"
         placeholder="Search by title / author / ISBN here..."
       />
-      <Button onClick={() => alert(`Seach for ${query}`)}>
+      <Button
+        onClick={() => alert(`Seach for ${query}`)}
+        className={"xl:-ml-3 xl:mt-[1px] xl:py-[6px] xl:px-4 py-[6.5px] mt-[1px] px-4"}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

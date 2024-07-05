@@ -136,7 +136,7 @@ const Container = ({ title, className, books, line }) => {
       <div className="flex justify-center">
         <Button
           className={
-            "mx-auto text-white rounded-full hover:animate-colorTransition hover:bg-orange-400"
+            "mx-auto text-white rounded-full hover:animate-colorTransition hover:bg-orange-400 py-[7px] px-4"
           }
         >
           View More

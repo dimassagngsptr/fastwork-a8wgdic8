@@ -31,6 +31,8 @@ import email from "../../assets/email.png";
 import whatsappicon from "../../assets/whatsappIcon.png";
 import weight from "../../assets/weight.png";
 import ageGroups from "../../assets/age-group.png";
+import logoPeriplusLogin from "../../assets/logo-periplus.jpg";
+import googleBtn from "../../assets/google_btn4.png";
 
 const images = {
   logo,
@@ -66,6 +68,8 @@ const images = {
   whatsappicon,
   weight,
   ageGroups,
+  logoPeriplusLogin,
+  googleBtn,
 };
 
 export default images;

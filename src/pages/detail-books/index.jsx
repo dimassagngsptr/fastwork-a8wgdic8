@@ -215,7 +215,7 @@ export default function DetailBooks() {
                 <p>Share your thoughts with other customers:</p>
                 <Button
                   className={
-                    "bg-black/80 text-white mt-1 hover:bg-orange-400 transition-colors duration-300"
+                    "bg-black/80 text-white mt-1 px-4 py-[7px] hover:bg-orange-400 transition-colors duration-300"
                   }
                   onClick={() => alert("navigasi ke review")}
                 >

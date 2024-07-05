@@ -26,7 +26,7 @@ const Testimonials = () => {
       <div className="flex justify-center mt-10">
         <Button
           className={
-            "mx-auto text-white rounded-full hover:animate-colorTransition hover:bg-orange-400"
+            "mx-auto text-white rounded-full hover:animate-colorTransition hover:bg-orange-400 xl:px-4 xl:py-[7px]"
           }
         >
           View More

@@ -52,14 +52,14 @@ const BookShipping = ({ buyQuantity, setBuyQuantity }) => {
               <div className="flex flex-col gap-y-1 items-center">
                 <Button
                   className={
-                    "bg-blue-600 px-9 text-xs font-semibold text-white hover:bg-orange-400 hover:text-white transition-colors duration-300"
+                    "xl:px-6 xl:py-[7px] bg-blue-600 px-9 py-[7px] text-xs font-semibold text-white hover:bg-orange-400 hover:text-white transition-colors duration-300"
                   }
                 >
                   ADD TO CART
                 </Button>
                 <Button
                   className={
-                    "bg-gray-200 px-7 text-xs font-semibold text-black hover:bg-orange-400 hover:text-white transition-colors duration-300"
+                    "xl:px-4 xl:py-[7px] bg-gray-200 px-7 py-[7px] text-xs font-semibold text-black hover:bg-orange-400 hover:text-white transition-colors duration-300"
                   }
                 >
                   ADD TO WISHLIST

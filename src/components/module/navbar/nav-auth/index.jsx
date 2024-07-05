@@ -12,7 +12,7 @@ const NavAuth = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="#fff"
-          className="size-8 cursor-pointer"
+          className="size-6 cursor-pointer"
         >
           <path
             strokeLinecap="round"
@@ -21,14 +21,14 @@ const NavAuth = () => {
           />
         </svg>
       </div>
-      <div className="relative xl:mx-5" onClick={() => navigate("/mycart")}>
+      <div className="relative xl:mx-2" onClick={() => navigate("/mycart")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="#fff"
-          className="size-8 cursor-pointer"
+          className="size-6 cursor-pointer"
         >
           <path
             strokeLinecap="round"
@@ -38,18 +38,21 @@ const NavAuth = () => {
         </svg>
         <Button
           className={
-            "bg-white text-red-500 rounded-full py-0 px-2 absolute -top-2 -right-3 xl:px-2 xl:py-0"
+            "bg-white text-red-500 rounded-full absolute -top-2 -right-3 xl:w-5 xl:h-5 text-xs text-center"
           }
         >
           0
         </Button>
       </div>
-      <div className="flex items-end text-white cursor-pointer w-full">
+      <div
+        className="flex items-end text-white cursor-pointer w-full"
+        onClick={() => navigate("/login")}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="#fff"
-          className="size-9 "
+          className="size-8"
         >
           <path
             fillRule="evenodd"
