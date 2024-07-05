@@ -4,41 +4,42 @@ const SendMessage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     // Handle form submission logic here
     alert(name);
     alert(email);
-    e.preventDefault();
+    alert(message);
     handleToggle();
   };
 
   return (
-    <div className="fixed bottom-0 right-2 w-64 ">
+    <div className="fixed bottom-0 right-2 w-72">
       <div
         className={`bg-white shadow-lg rounded p-4 transition-all duration-500 ease-in-out transform ${
-          isOpen ? "translate-y-0" : "translate-y-full"
+          isOpen ? "translate-y-0 py-10" : "translate-y-full"
         }`}
         style={{ transformOrigin: "bottom" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="20"
+          height="20"
           fill="currentColor"
-          class="bi bi-x-lg"
           viewBox="0 0 16 16"
-          className="absolute right-1 top-1 cursor-pointer"
+          className="absolute right-10 top-4 cursor-pointer"
           onClick={handleToggle}
         >
           <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
         </svg>
         {isOpen && (
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form onSubmit={(e) => handleSubmit(e)} className="max-h-44 overflow-y-scroll">
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -68,6 +69,21 @@ const SendMessage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="message"
+                className="block text-gray-700 text-sm font-bold mb-2"
+              >
+                Message:
+              </label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-28"
                 required
               />
             </div>

@@ -36,7 +36,7 @@ const NavSearch = () => {
       <SelectOption
         onChange={(e) => handleCategories(e)}
         className={
-          "hidden text-gray-500 xl:block xl:px-2 xl:py-[9px] rounded-l cursor-pointer xl:mt-[1px] px-0 py-0 outline-none"
+          "hidden text-gray-500 xl:block xl:px-2 xl:py-[8px] rounded-l cursor-pointer xl:mt-[1px] px-0 py-0 outline-none"
         }
       >
         {options?.map((item, i) => (
