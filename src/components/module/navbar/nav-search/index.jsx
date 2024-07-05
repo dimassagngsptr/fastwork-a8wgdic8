@@ -32,8 +32,8 @@ const NavSearch = () => {
     alert(e?.target?.value);
   };
   return (
-    <div className="flex items-center w-full">
-      <div className="hidden text-gray-500 xl:block xl:px-2 py-[4px] rounded-l cursor-pointer xl:mt-[1px] bg-white outline-none">
+    <div className="flex items-center w-full bg-white xl:max-w-[550px] rounded xl:mr-20">
+      <div className="hidden text-gray-500 xl:block xl:px-2 py-[4px] rounded-l cursor-pointer xl:mt-[1px] outline-none">
         <SelectOption onChange={(e) => handleCategories(e)} className={"px-1 py-1 bg-transparent cursor-pointer"}>
           {options?.map((item, i) => (
             <option key={i} value={item?.value} className="font-poppins">
@@ -44,7 +44,7 @@ const NavSearch = () => {
       </div>
       <Input
         className={
-          "xl:px-5 xl:py-[7px] xl:mt-[1px] outline-none rounded-l xl:-ml-1 xl:w-96 w-72 px-2 py-2 md:w-[700px]"
+          "xl:px-5 xl:py-[7px] xl:mt-[1px] outline-none rounded-l xl:-ml-1 xl:w-96 w-72 px-2 py-2 md:w-[700px] bg-transparent"
         }
         onChange={(e) => handleSearch(e)}
         name="search"
